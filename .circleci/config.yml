@@ -8,10 +8,10 @@ sonarqube:
    SONAR_HOST_URL: "https://sonar.dev.veltra.com"
  steps:
    - checkout
-    - run:
+  - run:
         name: Install dependencies
         command: yarn
-    - run:
+  - run:
         name: Test and coverage
         command: yarn jest --coverage
 
