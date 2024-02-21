@@ -1,4 +1,5 @@
 version: 2.1
+
 jobs:
 sonarqube:
  circleci_ip_ranges: true
@@ -8,13 +9,6 @@ sonarqube:
    SONAR_HOST_URL: "https://sonar.dev.veltra.com"
  steps:
    - checkout
-  - run:
-      name: Install dependencies
-      command: yarn
-  - run:
-      name: Test and coverage
-      command: yarn jest --coverage
-
    - run:
        name: Install SonarQube Scanner
        command: |
@@ -34,7 +28,7 @@ sonarqube:
 
          # Function to query SonarQube for the Quality Gate status
          checkQualityGate() {
-           sonar_project_key="your sonarqube project key"
+           sonar_project_key="show-test"
            sleep 5  # initial sleep time
            for i in {1..30}; do  # polling for a maximum of 30 attempts
              response=$(curl -s -u $SONAR_TOKEN: "$SONAR_HOST_URL/api/qualitygates/project_status?projectKey=$sonar_project_key")
