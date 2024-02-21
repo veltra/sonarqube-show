@@ -4,7 +4,7 @@ jobs:
   sonarqube:
     circleci_ip_ranges: true
     docker:
-      - image: circleci/node:18.19.0
+      - image: cimg/node:18.19.0
     environment:
       SONAR_HOST_URL: "https://sonar.dev.veltra.com"
     steps:
@@ -55,4 +55,3 @@ workflows:
   Sonarqube-analyze:
     jobs:
       - sonarqube
-      
