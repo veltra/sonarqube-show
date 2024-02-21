@@ -9,11 +9,11 @@ sonarqube:
  steps:
    - checkout
   - run:
-        name: Install dependencies
-        command: yarn
+      name: Install dependencies
+      command: yarn
   - run:
-        name: Test and coverage
-        command: yarn jest --coverage
+      name: Test and coverage
+      command: yarn jest --coverage
 
    - run:
        name: Install SonarQube Scanner
