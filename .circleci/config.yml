@@ -27,7 +27,7 @@ jobs:
             set -e
 
             checkQualityGate() {
-              sonar_project_key="show-test"
+              sonar_project_key="test-repo"
               sleep 5  # initial sleep time
               for i in {1..30}; do  # polling for a maximum of 30 attempts
                 response=$(curl -s -u $SONAR_TOKEN: "$SONAR_HOST_URL/api/qualitygates/project_status?projectKey=$sonar_project_key")
