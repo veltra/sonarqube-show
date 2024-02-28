@@ -31,3 +31,6 @@ console.log(result);
 // Demonstrating error handling with null input
 const errorProneResult = processData(); // This now handles null/undefined safely.
 console.log(errorProneResult);
+// Demonstrating error handling with null input
+const errorProneResult = processData(); // This now handles null/undefined safely.
+console.log(errorProneResult);
